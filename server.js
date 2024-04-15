@@ -23,9 +23,9 @@ app.get('/', async (req, res) => {
 
   app.get("/:shortUrl",async(req,res)=>{
     const url = await ShortUrl.findOne({short : req.params.shortUrl})
-    if(shortUrl==null) return res.sendStatus(404)
+    if(!url) return res.sendStatus(404)
 
-    url.clicks++
+    url.clicks++;
     url.save()
 
     res.redirect(url.full)
