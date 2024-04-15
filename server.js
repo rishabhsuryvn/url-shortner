@@ -1,9 +1,8 @@
 const express = require("express")
 const mongoose  = require("mongoose")
 const ShortUrl = require('./models/shortUrl')
-const shortUrl = require("./models/shortUrl")
 
-mongoose.connect('mongodb://127.0.0.1:27017/UrlShortner').then(()=>{console.log("connected succesfully")}).catch((error)=>{$`error`})
+mongoose.connect(process.env.DB_URI).then(()=>{console.log("connected succesfully")}).catch((error)=>{`error`})
 
 const app = express()
 app.set('view engine', 'ejs')
