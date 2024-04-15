@@ -32,4 +32,4 @@ app.get('/', async (req, res) => {
   })
   
 
-app.listen(8001, ()=> console.log("server started"))
+app.listen(process.env.PORT || 8001, ()=> console.log("server started"))
